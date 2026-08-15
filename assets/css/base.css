@@ -1,0 +1,219 @@
+/* ==========================================================================
+   base.css — variabili di progetto, reset e tipografia
+   Tutto il resto del sito legge i colori e le misure da qui.
+   ========================================================================== */
+
+:root {
+  /* Colori --------------------------------------------------------------- */
+  --inchiostro: #17251a;   /* testo principale */
+  --bosco: #2c4a33;        /* verde del logo, fondali scuri */
+  --bosco-chiaro: #3d6144;
+  --salvia: #8fa083;       /* verde tenue, bordi e dettagli */
+  --calce: #edefe4;        /* fondo pagina, bianco di calce */
+  --carta: #fbfbf6;        /* superfici in rilievo */
+  --miele: #d79a25;        /* accento: pulsanti e richiami */
+  --miele-scuro: #a97614;
+  --monte: #4a6070;        /* blu-grigio dei monti, testo secondario */
+  --legno: #7a5c3e;        /* i ripiani della dispensa */
+  --legno-scuro: #55402b;
+
+  /* Tipografia ----------------------------------------------------------- */
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-testo: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --scala-xs: 0.8125rem;
+  --scala-s: 0.9375rem;
+  --scala-m: 1.0625rem;
+  --scala-l: 1.25rem;
+  --scala-xl: clamp(1.5rem, 1.2rem + 1.4vw, 2rem);
+  --scala-xxl: clamp(2rem, 1.5rem + 2.6vw, 3rem);
+  --scala-hero: clamp(2.75rem, 1.8rem + 4.6vw, 5rem);
+
+  /* Spazi e misure ------------------------------------------------------- */
+  --spazio-1: 0.5rem;
+  --spazio-2: 1rem;
+  --spazio-3: 1.5rem;
+  --spazio-4: 2.5rem;
+  --spazio-5: 4rem;
+  --spazio-6: 6rem;
+
+  --larghezza-max: 1140px;
+  --larghezza-testo: 62ch;
+  --raggio: 14px;
+  --raggio-piccolo: 8px;
+
+  --ombra-bassa: 0 1px 2px rgba(23, 37, 26, 0.08), 0 4px 12px rgba(23, 37, 26, 0.06);
+  --ombra-alta: 0 6px 14px rgba(23, 37, 26, 0.12), 0 18px 36px rgba(23, 37, 26, 0.12);
+
+  --transizione: 180ms ease;
+}
+
+/* Reset essenziale --------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  margin: 0;
+  background-color: var(--calce);
+  color: var(--inchiostro);
+  font-family: var(--font-testo);
+  font-size: var(--scala-m);
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* Tipografia --------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 60, "WONK" 1;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin: 0 0 var(--spazio-2);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--scala-hero);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--scala-xxl);
+}
+
+h3 {
+  font-size: var(--scala-xl);
+}
+
+h4 {
+  font-size: var(--scala-l);
+}
+
+p {
+  margin: 0 0 var(--spazio-2);
+  max-width: var(--larghezza-testo);
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--bosco);
+  text-decoration-color: var(--salvia);
+  text-underline-offset: 3px;
+  transition: color var(--transizione), text-decoration-color var(--transizione);
+}
+
+a:hover {
+  color: var(--miele-scuro);
+  text-decoration-color: currentColor;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* Elementi ricorrenti ------------------------------------------------------ */
+
+.occhiello {
+  font-family: var(--font-testo);
+  font-size: var(--scala-xs);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--monte);
+  margin: 0 0 var(--spazio-2);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Il trattino a dente di monte che precede ogni occhiello: la sagoma della
+   Riserva dei Monti Cervia e Navegna ridotta a segno grafico. */
+.occhiello::before {
+  content: "";
+  width: 26px;
+  height: 8px;
+  flex: 0 0 auto;
+  background-color: currentColor;
+  clip-path: polygon(0% 100%, 22% 25%, 40% 62%, 66% 0%, 100% 100%);
+}
+
+.testo-guida {
+  font-size: var(--scala-l);
+  color: color-mix(in srgb, var(--inchiostro) 82%, transparent);
+}
+
+/* Accessibilità ------------------------------------------------------------ */
+
+.salta-al-contenuto {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--miele);
+  color: var(--inchiostro);
+  padding: var(--spazio-1) var(--spazio-2);
+  border-radius: 0 0 var(--raggio-piccolo) 0;
+  font-weight: 700;
+}
+
+.salta-al-contenuto:focus {
+  left: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--miele);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.solo-lettori-schermo {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

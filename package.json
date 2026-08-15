@@ -1,0 +1,11 @@
+{
+  "name": "dispensa-paesana",
+  "version": "1.0.0",
+  "description": "Sito vetrina della Dispensa Paesana: gruppi di spesa temporanei tra Collalto Sabino, Ricetto, San Lorenzo, Nespolo e Collegiove.",
+  "private": true,
+  "scripts": {
+    "build": "node tools/build.js",
+    "serve": "python3 -m http.server 8000"
+  },
+  "license": "UNLICENSED"
+}

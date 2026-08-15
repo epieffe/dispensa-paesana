@@ -1,0 +1,49 @@
+{
+  "slug": "atipiche",
+  "ordine": 40,
+  "nome": "Cooperativa Atipiche",
+  "nomeBreve": "Atipiche",
+  "categoria": "Alimenti fermentati",
+  "cosaVende": "Verdure e bevande fermentate biologiche",
+  "paese": "Collalto Sabino",
+  "comune": "Collalto Sabino (RI)",
+  "simbolo": "🫙",
+  "sommario": "Verdure e bevande fermentate con ingredienti locali e stagionali, prodotte nel laboratorio di Collalto Sabino insieme a corsi e workshop sulla fermentazione.",
+  "descrizione": [
+    "La Cooperativa Atipiche produce alimenti e bevande fermentate utilizzando ingredienti locali e stagionali. Crauti, barbabietole, carote e kimchi nascono da ortaggi lavorati freschi e lasciati fermentare senza pastorizzazione, con sale e spezie.",
+    "Nel laboratorio di Collalto Sabino la cooperativa organizza anche corsi, workshop ed eventi per riportare la fermentazione nella quotidianità, riscoprendone tecniche, sapori e tradizioni.",
+    "Il laboratorio nasce all'interno di una struttura riqualificata grazie al progetto PNRR \"Borghi del Turano\" ed è sede della prima impresa femminile del Turano."
+  ],
+  "listinoNota": "Nel modulo d'ordine si indica il numero di confezioni desiderate per ciascun prodotto.",
+  "prodotti": [
+    {
+      "nome": "Crauti rossi fermentati",
+      "formato": "280 g — cavolo cappuccio rosso, sale, semi di cumino dei prati",
+      "prezzo": "€ 7,60"
+    },
+    {
+      "nome": "Barbabietole rosse fermentate",
+      "formato": "320 g — barbabietole rosse, acqua, sale, semi di coriandolo",
+      "prezzo": "€ 7,60"
+    },
+    {
+      "nome": "Carote speziate a stick fermentate",
+      "formato": "320 g — carote, acqua, aglio, sale, coriandolo, cumino, cannella, alloro",
+      "prezzo": "€ 8,10"
+    },
+    {
+      "nome": "Achar di carote a rondelle, fermentate all'indiana",
+      "formato": "280 g — carote, olio extravergine di oliva, sale, aglio, curcuma, senape gialla e nera",
+      "prezzo": "€ 8,10"
+    },
+    {
+      "nome": "Kimchi",
+      "formato": "280 g — cavolo cinese, mele, cipolle, salsa di soia, carote, zenzero, aglio, zucchero, paprika, sale, peperoncino",
+      "prezzo": "€ 8,55"
+    }
+  ],
+  "ordine_url": "https://docs.google.com/forms/d/e/1FAIpQLSd52wbyts0jmHK2unJztCP92cLPXK80-I4FNtZHJUbhD7oHkQ/viewform",
+  "ordine_etichetta": "Prenota gli alimenti fermentati",
+  "sitoWeb": "",
+  "risorse": []
+}

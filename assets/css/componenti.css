@@ -1,0 +1,387 @@
+/* ==========================================================================
+   componenti.css — pulsanti, schede produttore, passi, riquadri
+   ========================================================================== */
+
+/* Pulsanti ----------------------------------------------------------------- */
+
+.bottone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font-family: var(--font-testo);
+  font-size: var(--scala-s);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--transizione), background-color var(--transizione),
+    border-color var(--transizione), color var(--transizione);
+}
+
+.bottone:hover {
+  transform: translateY(-2px);
+}
+
+.bottone svg {
+  width: 1.15em;
+  height: 1.15em;
+  flex: 0 0 auto;
+  fill: currentColor;
+}
+
+.bottone--whatsapp {
+  background-color: var(--miele);
+  color: var(--inchiostro);
+  box-shadow: var(--ombra-bassa);
+}
+
+.bottone--whatsapp:hover {
+  background-color: #e8ab35;
+  color: var(--inchiostro);
+}
+
+.bottone--fantasma {
+  border-color: color-mix(in srgb, var(--calce) 55%, transparent);
+  color: var(--calce);
+}
+
+.bottone--fantasma:hover {
+  border-color: var(--calce);
+  color: var(--calce);
+  background-color: color-mix(in srgb, var(--calce) 10%, transparent);
+}
+
+.bottone--bosco {
+  background-color: var(--bosco);
+  color: var(--carta);
+}
+
+.bottone--bosco:hover {
+  background-color: var(--bosco-chiaro);
+  color: var(--carta);
+}
+
+.bottone--contorno {
+  border-color: var(--bosco);
+  color: var(--bosco);
+}
+
+.bottone--contorno:hover {
+  background-color: var(--bosco);
+  color: var(--carta);
+}
+
+/* La dispensa: schede dei produttori appoggiate sui ripiani ---------------- */
+
+.dispensa {
+  list-style: none;
+  display: grid;
+  gap: var(--spazio-4) var(--spazio-3);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+}
+
+.barattolo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background-color: var(--carta);
+  border: 1px solid color-mix(in srgb, var(--salvia) 50%, transparent);
+  border-radius: var(--raggio) var(--raggio) 4px 4px;
+  padding: var(--spazio-3);
+  box-shadow: var(--ombra-bassa);
+  transition: transform var(--transizione), box-shadow var(--transizione);
+}
+
+/* il ripiano di legno sotto ogni scheda */
+.barattolo::after {
+  content: "";
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  bottom: -10px;
+  height: 10px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--legno) 0%, var(--legno) 55%, var(--legno-scuro) 100%);
+  box-shadow: 0 6px 10px rgba(23, 37, 26, 0.18);
+}
+
+.barattolo:hover,
+.barattolo:focus-within {
+  transform: translateY(-6px);
+  box-shadow: var(--ombra-alta);
+}
+
+/* il ripiano non si muove con la scheda: è il barattolo a essere sollevato */
+.barattolo::after {
+  transition: transform var(--transizione);
+}
+
+.barattolo:hover::after,
+.barattolo:focus-within::after {
+  transform: translateY(6px);
+}
+
+.barattolo__simbolo {
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.barattolo__nome {
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 60, "WONK" 1;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.barattolo__nome a {
+  text-decoration: none;
+  color: var(--inchiostro);
+}
+
+/* tutta la scheda è cliccabile, senza annidare link */
+.barattolo__nome a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.barattolo__nome a:hover {
+  color: var(--bosco);
+}
+
+.barattolo__categoria {
+  font-size: var(--scala-s);
+  color: color-mix(in srgb, var(--inchiostro) 78%, transparent);
+  margin: 0;
+  flex-grow: 1;
+}
+
+.barattolo__paese {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--scala-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--monte);
+}
+
+.barattolo__paese svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.barattolo__vai {
+  font-size: var(--scala-s);
+  font-weight: 700;
+  color: var(--bosco);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.barattolo:hover .barattolo__vai {
+  color: var(--miele-scuro);
+}
+
+/* I passi della spesa ------------------------------------------------------ */
+
+.passi {
+  list-style: none;
+  counter-reset: passo;
+  display: grid;
+  gap: var(--spazio-3);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+}
+
+.passo {
+  counter-increment: passo;
+  position: relative;
+  padding-top: var(--spazio-3);
+  border-top: 2px solid color-mix(in srgb, var(--salvia) 60%, transparent);
+}
+
+.passo::before {
+  content: counter(passo);
+  position: absolute;
+  top: -1.05rem;
+  left: 0;
+  width: 2.1rem;
+  height: 2.1rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: var(--miele);
+  color: var(--inchiostro);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.passo h3 {
+  font-size: var(--scala-l);
+  margin-top: var(--spazio-2);
+  margin-bottom: 0.4rem;
+}
+
+.passo p {
+  font-size: var(--scala-s);
+  margin: 0;
+}
+
+.sezione--scura .passo {
+  border-top-color: color-mix(in srgb, var(--salvia) 45%, transparent);
+}
+
+.sezione--scura .passo p {
+  color: color-mix(in srgb, var(--calce) 85%, transparent);
+}
+
+/* Elenco dei valori -------------------------------------------------------- */
+
+.valori {
+  list-style: none;
+  display: grid;
+  gap: var(--spazio-2);
+}
+
+.valori li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.8rem;
+  align-items: baseline;
+  padding-bottom: var(--spazio-2);
+  border-bottom: 1px solid color-mix(in srgb, var(--salvia) 40%, transparent);
+}
+
+.valori li::before {
+  content: "";
+  width: 18px;
+  height: 6px;
+  background-color: var(--miele);
+  clip-path: polygon(0% 100%, 22% 25%, 40% 62%, 66% 0%, 100% 100%);
+  transform: translateY(-2px);
+}
+
+.valori strong {
+  display: block;
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 60, "WONK" 1;
+  font-size: var(--scala-l);
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+}
+
+.valori p {
+  margin: 0;
+  font-size: var(--scala-s);
+  color: color-mix(in srgb, var(--inchiostro) 80%, transparent);
+}
+
+/* Riquadri ----------------------------------------------------------------- */
+
+.riquadro {
+  background-color: var(--carta);
+  border: 1px solid color-mix(in srgb, var(--salvia) 55%, transparent);
+  border-left: 5px solid var(--miele);
+  border-radius: var(--raggio-piccolo);
+  padding: var(--spazio-3);
+  box-shadow: var(--ombra-bassa);
+}
+
+.riquadro h3 {
+  font-size: var(--scala-l);
+  margin-bottom: 0.5rem;
+}
+
+.riquadro p:last-child,
+.riquadro ul:last-child {
+  margin-bottom: 0;
+}
+
+.riquadro--sfondo-scuro {
+  background-color: color-mix(in srgb, var(--calce) 8%, transparent);
+  border-color: color-mix(in srgb, var(--salvia) 40%, transparent);
+  color: var(--calce);
+  box-shadow: none;
+}
+
+.elenco-semplice {
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+  font-size: var(--scala-s);
+}
+
+.elenco-semplice li {
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.elenco-semplice li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--miele);
+}
+
+/* Richiamo finale ---------------------------------------------------------- */
+
+.richiamo {
+  background-color: var(--bosco);
+  color: var(--calce);
+  border-radius: var(--raggio);
+  padding: var(--spazio-4);
+  display: grid;
+  gap: var(--spazio-3);
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.richiamo h2 {
+  color: var(--carta);
+  margin-bottom: 0.5rem;
+}
+
+.richiamo p {
+  margin: 0;
+  color: color-mix(in srgb, var(--calce) 85%, transparent);
+}
+
+@media (max-width: 720px) {
+  .richiamo {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Rivelazione allo scorrimento --------------------------------------------- */
+
+.rivela {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.rivela.is-visibile {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rivela {
+    opacity: 1;
+    transform: none;
+  }
+}

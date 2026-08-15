@@ -1,0 +1,29 @@
+{
+  "slug": "eredi-bonanni",
+  "ordine": 20,
+  "nome": "Azienda Agricola Eredi Bonanni",
+  "nomeBreve": "Eredi Bonanni",
+  "categoria": "Uova biologiche",
+  "cosaVende": "Uova biologiche da galline allevate all'aperto",
+  "paese": "Paganico Sabino",
+  "comune": "Paganico Sabino (RI)",
+  "simbolo": "🥚",
+  "sommario": "Uova biologiche di galline Livornesi bianche, allevate in libertà a Paganico Sabino e alimentate con mangimi biologici.",
+  "descrizione": [
+    "L'Azienda Agricola Eredi Bonanni alleva galline di razza Livornese bianca a Paganico Sabino, sulla sponda del lago del Turano. Le galline vivono in libertà e sono alimentate con prodotti biologici.",
+    "La Livornese bianca è una razza rustica e vivace, adatta al pascolo all'aperto: depone uova dal guscio bianco, più piccole e sode di quelle da allevamento intensivo.",
+    "Per i gruppi di spesa della Dispensa Paesana l'azienda riserva un prezzo dedicato sulle confezioni da sei uova, che vengono preparate in base alle prenotazioni raccolte."
+  ],
+  "listinoNota": "Prezzo riservato ai partecipanti della Dispensa Paesana.",
+  "prodotti": [
+    {
+      "nome": "Uova biologiche",
+      "formato": "Confezione da 6",
+      "prezzo": "€ 3,00"
+    }
+  ],
+  "ordine_url": "https://docs.google.com/forms/d/e/1FAIpQLSfeHlaf5NBxFnHGtiUVNbhxQ7iiui9Kp_4z0VZfPf_cPFwfpQ/viewform",
+  "ordine_etichetta": "Prenota le uova biologiche",
+  "sitoWeb": "https://www.aziendaagricolabonanni.it/",
+  "risorse": []
+}

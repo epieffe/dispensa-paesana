@@ -1,0 +1,371 @@
+/* ==========================================================================
+   layout.css — impalcatura della pagina: intestazione, sezioni, hero, footer
+   ========================================================================== */
+
+.contenitore {
+  width: 100%;
+  max-width: var(--larghezza-max);
+  margin-inline: auto;
+  padding-inline: var(--spazio-3);
+}
+
+/* Intestazione ------------------------------------------------------------- */
+
+.intestazione {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: color-mix(in srgb, var(--calce) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid color-mix(in srgb, var(--salvia) 45%, transparent);
+}
+
+.intestazione__interno {
+  display: flex;
+  align-items: center;
+  gap: var(--spazio-2);
+  min-height: 4.5rem;
+}
+
+.marchio {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  color: var(--inchiostro);
+  margin-right: auto;
+}
+
+.marchio img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.marchio__nome {
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 60, "WONK" 1;
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.marchio__nota {
+  display: block;
+  font-family: var(--font-testo);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--monte);
+  margin-top: 0.25rem;
+}
+
+.navigazione ul {
+  display: flex;
+  align-items: center;
+  gap: var(--spazio-3);
+  list-style: none;
+}
+
+.navigazione a {
+  text-decoration: none;
+  font-size: var(--scala-s);
+  font-weight: 700;
+  color: var(--inchiostro);
+  padding-block: 0.35rem;
+  border-bottom: 2px solid transparent;
+}
+
+.navigazione a:hover,
+.navigazione a[aria-current="page"] {
+  color: var(--bosco);
+  border-bottom-color: var(--miele);
+}
+
+.apri-menu {
+  display: none;
+  background: none;
+  border: 1px solid var(--salvia);
+  border-radius: var(--raggio-piccolo);
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+  color: var(--inchiostro);
+}
+
+.apri-menu svg {
+  width: 22px;
+  height: 22px;
+}
+
+@media (max-width: 900px) {
+  .apri-menu {
+    display: block;
+    order: 3;
+  }
+
+  .intestazione .bottone--whatsapp {
+    order: 2;
+    padding: 0.55rem 0.9rem;
+    font-size: var(--scala-xs);
+  }
+
+  .navigazione {
+    order: 4;
+    flex-basis: 100%;
+    display: none;
+    border-top: 1px solid color-mix(in srgb, var(--salvia) 45%, transparent);
+    padding-block: var(--spazio-2);
+  }
+
+  .navigazione.is-aperta {
+    display: block;
+  }
+
+  .navigazione ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .navigazione a {
+    display: block;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--salvia) 30%, transparent);
+  }
+
+  .intestazione__interno {
+    flex-wrap: wrap;
+    padding-block: 0.6rem;
+  }
+}
+
+/* Sotto i 560px l'intestazione lascia solo l'icona di WhatsApp: il testo resta
+   nel DOM per i lettori di schermo. */
+@media (max-width: 560px) {
+  .marchio img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .marchio__nome {
+    font-size: 1rem;
+  }
+
+  .marchio__nota {
+    display: none;
+  }
+
+  .intestazione .bottone--whatsapp {
+    font-size: 0;
+    gap: 0;
+    padding: 0.65rem;
+  }
+
+  .intestazione .bottone--whatsapp svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Sezioni ------------------------------------------------------------------ */
+
+.sezione {
+  padding-block: var(--spazio-6);
+}
+
+.sezione--stretta {
+  padding-block: var(--spazio-5);
+}
+
+.sezione--scura {
+  background-color: var(--bosco);
+  color: var(--calce);
+}
+
+.sezione--scura h2,
+.sezione--scura h3 {
+  color: var(--carta);
+}
+
+.sezione--scura .occhiello {
+  color: color-mix(in srgb, var(--miele) 85%, white);
+}
+
+.sezione--scura a {
+  color: var(--miele);
+}
+
+.sezione__intro {
+  max-width: 58ch;
+  margin-bottom: var(--spazio-4);
+}
+
+.griglia-due {
+  display: grid;
+  gap: var(--spazio-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  align-items: start;
+}
+
+/* Copertina ---------------------------------------------------------------- */
+
+.copertina {
+  position: relative;
+  background-color: var(--bosco);
+  color: var(--calce);
+  padding-top: var(--spazio-5);
+  padding-bottom: calc(var(--spazio-6) + 60px);
+  overflow: hidden;
+}
+
+.copertina__interno {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: var(--spazio-4);
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.copertina h1 {
+  color: var(--carta);
+  margin-bottom: var(--spazio-2);
+}
+
+.copertina h1 em {
+  display: block;
+  font-style: normal;
+  color: var(--miele);
+  font-size: 0.42em;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  line-height: 1.15;
+  margin-top: 0.35em;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+
+.copertina__occhiello {
+  color: color-mix(in srgb, var(--salvia) 90%, white);
+}
+
+.copertina__testo {
+  font-size: var(--scala-l);
+  color: color-mix(in srgb, var(--calce) 88%, transparent);
+  max-width: 46ch;
+}
+
+.copertina__azioni {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spazio-2);
+  margin-top: var(--spazio-3);
+}
+
+.copertina__paesi {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  margin-top: var(--spazio-4);
+  padding-top: var(--spazio-2);
+  border-top: 1px solid color-mix(in srgb, var(--salvia) 40%, transparent);
+  font-size: var(--scala-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--calce) 75%, transparent);
+}
+
+.copertina__paesi li + li::before {
+  content: "·";
+  margin-right: 0.75rem;
+  color: var(--miele);
+}
+
+.copertina__logo {
+  justify-self: center;
+  width: min(340px, 100%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px color-mix(in srgb, var(--calce) 12%, transparent),
+    0 24px 48px rgba(0, 0, 0, 0.35);
+}
+
+/* Il profilo dei monti che chiude la copertina */
+.cresta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 90px;
+  z-index: 1;
+  fill: var(--calce);
+}
+
+@media (max-width: 860px) {
+  .copertina__interno {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .copertina__logo {
+    order: -1;
+    width: min(200px, 55%);
+    justify-self: start;
+  }
+}
+
+/* Piè di pagina ------------------------------------------------------------ */
+
+.pie {
+  background-color: var(--inchiostro);
+  color: color-mix(in srgb, var(--calce) 80%, transparent);
+  padding-block: var(--spazio-5) var(--spazio-3);
+  font-size: var(--scala-s);
+}
+
+.pie a {
+  color: var(--calce);
+}
+
+.pie a:hover {
+  color: var(--miele);
+}
+
+.pie__griglia {
+  display: grid;
+  gap: var(--spazio-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  padding-bottom: var(--spazio-4);
+}
+
+.pie h3 {
+  font-size: var(--scala-m);
+  color: var(--carta);
+  margin-bottom: var(--spazio-1);
+}
+
+.pie ul {
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.pie__coda {
+  border-top: 1px solid color-mix(in srgb, var(--salvia) 25%, transparent);
+  padding-top: var(--spazio-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spazio-2);
+  justify-content: space-between;
+  font-size: var(--scala-xs);
+  color: color-mix(in srgb, var(--calce) 60%, transparent);
+}
+
+.pie__firma {
+  max-width: 52ch;
+  font-style: italic;
+}

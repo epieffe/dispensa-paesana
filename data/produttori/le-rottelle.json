@@ -1,0 +1,28 @@
+{
+  "slug": "le-rottelle",
+  "ordine": 10,
+  "nome": "Azienda Agricola Le Rottelle",
+  "nomeBreve": "Le Rottelle",
+  "categoria": "Formaggi e latticini",
+  "cosaVende": "Formaggi e latticini vaccini, pacchi carne",
+  "paese": "Poggio Cinolfo",
+  "comune": "Carsoli (AQ)",
+  "simbolo": "🧀",
+  "sommario": "Formaggi e latticini vaccini prodotti a Poggio Cinolfo, ai piedi dell'altopiano di Carsoli, insieme ai pacchi carne dell'allevamento aziendale.",
+  "descrizione": [
+    "Le Rottelle è un'azienda agricola di Poggio Cinolfo, frazione di Carsoli, a pochi chilometri dai paesi della Dispensa Paesana. Il latte lavorato in caseificio arriva dalla mandria allevata in azienda: una filiera che comincia e finisce nello stesso posto.",
+    "La produzione comprende formaggi e latticini vaccini freschi e stagionati, che cambiano con il ritmo delle stagioni e del pascolo. L'azienda prepara inoltre pacchi carne su prenotazione.",
+    "Attraverso la Dispensa Paesana i prodotti vengono preparati su ordinazione e consegnati direttamente al punto di ritiro, senza passaggi intermedi."
+  ],
+  "listinoNota": "Il listino aggiornato con i formati e i prezzi è pubblicato dal produttore nella cartella qui sotto.",
+  "prodotti": [],
+  "ordine_url": "https://docs.google.com/forms/d/e/1FAIpQLSdqVaareTd1SaguJxIMVGuBZSqXA0CKtJdKELO5QX7aXpzHJw/viewform",
+  "ordine_etichetta": "Prenota formaggi e latticini",
+  "sitoWeb": "",
+  "risorse": [
+    {
+      "etichetta": "Listino prodotti e informazioni sull'azienda",
+      "url": "https://drive.google.com/drive/folders/1V9tr0PLbczMBTcs21Cpm4RQyOOIaGYT7"
+    }
+  ]
+}

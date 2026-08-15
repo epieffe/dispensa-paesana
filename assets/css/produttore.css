@@ -1,0 +1,179 @@
+/* ==========================================================================
+   produttore.css — stili usati solo dalle pagine di dettaglio dei produttori
+   ========================================================================== */
+
+.briciole {
+  font-size: var(--scala-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--calce) 70%, transparent);
+  padding-top: var(--spazio-3);
+}
+
+.briciole a {
+  color: color-mix(in srgb, var(--calce) 85%, transparent);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--miele) 70%, transparent);
+}
+
+.briciole a:hover {
+  color: var(--miele);
+}
+
+.briciole span {
+  margin-inline: 0.5rem;
+  color: var(--miele);
+}
+
+/* Testata della scheda produttore ----------------------------------------- */
+
+.testata-produttore {
+  background-color: var(--bosco);
+  color: var(--calce);
+  position: relative;
+  padding-bottom: calc(var(--spazio-5) + 60px);
+  overflow: hidden;
+}
+
+.testata-produttore__interno {
+  padding-top: var(--spazio-4);
+  position: relative;
+  z-index: 2;
+}
+
+.testata-produttore h1 {
+  color: var(--carta);
+  font-size: clamp(2.2rem, 1.6rem + 2.6vw, 3.4rem);
+  max-width: 18ch;
+}
+
+.testata-produttore__simbolo {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: var(--spazio-2);
+}
+
+.testata-produttore__sommario {
+  font-size: var(--scala-l);
+  color: color-mix(in srgb, var(--calce) 88%, transparent);
+  max-width: 52ch;
+}
+
+.etichette {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: var(--spazio-3);
+}
+
+.etichette li {
+  font-size: var(--scala-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--salvia) 55%, transparent);
+  color: color-mix(in srgb, var(--calce) 88%, transparent);
+}
+
+.etichette li:first-child {
+  background-color: var(--miele);
+  border-color: var(--miele);
+  color: var(--inchiostro);
+}
+
+/* Corpo della scheda ------------------------------------------------------- */
+
+.scheda {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: var(--spazio-5);
+  align-items: start;
+  padding-block: var(--spazio-5);
+}
+
+.scheda__racconto p {
+  font-size: var(--scala-m);
+}
+
+.scheda__laterale {
+  position: sticky;
+  top: 6rem;
+  display: grid;
+  gap: var(--spazio-3);
+}
+
+@media (max-width: 900px) {
+  .scheda {
+    grid-template-columns: 1fr;
+    gap: var(--spazio-4);
+  }
+
+  .scheda__laterale {
+    position: static;
+  }
+}
+
+/* Listino ------------------------------------------------------------------ */
+
+.listino-blocco {
+  margin-top: var(--spazio-4);
+  padding-top: var(--spazio-3);
+  border-top: 1px solid color-mix(in srgb, var(--salvia) 45%, transparent);
+}
+
+.listino-blocco h2 {
+  font-size: var(--scala-xl);
+}
+
+.listino {
+  list-style: none;
+  display: grid;
+  gap: 0;
+  margin-top: var(--spazio-2);
+}
+
+.listino li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem var(--spazio-2);
+  align-items: baseline;
+  padding: var(--spazio-2) 0;
+  border-bottom: 1px dashed color-mix(in srgb, var(--salvia) 65%, transparent);
+}
+
+.listino li:first-child {
+  border-top: 1px dashed color-mix(in srgb, var(--salvia) 65%, transparent);
+}
+
+.listino__nome {
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 60, "WONK" 1;
+  font-size: var(--scala-l);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.listino__formato {
+  grid-column: 1 / -1;
+  font-size: var(--scala-s);
+  color: color-mix(in srgb, var(--inchiostro) 72%, transparent);
+}
+
+.listino__prezzo {
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 60, "WONK" 1;
+  font-size: var(--scala-l);
+  font-weight: 700;
+  color: var(--miele-scuro);
+  white-space: nowrap;
+}
+
+/* Navigazione tra produttori ---------------------------------------------- */
+
+.altri-produttori {
+  border-top: 1px solid color-mix(in srgb, var(--salvia) 45%, transparent);
+  padding-block: var(--spazio-5);
+}

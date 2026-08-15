@@ -1,0 +1,27 @@
+{
+  "nome": "Dispensa Paesana",
+  "sottotitolo": "Dal territorio, per la comunità",
+  "descrizione": "Gruppi di spesa temporanei tra Collalto Sabino, Ricetto, San Lorenzo, Nespolo e Collegiove: prenoti dai produttori locali, ritiri in paese, paghi direttamente a chi produce.",
+  "baseUrl": "https://www.dispensapaesana.it",
+  "email": "dispensapaesana@gmail.com",
+  "whatsapp": "https://chat.whatsapp.com/GsconrVjEJtGJzYn5DuaPq?s=cl&p=a&ilr=0",
+  "documentoProgetto": "https://drive.google.com/file/d/12ZVP2cDiiBgMGHCc9cVIIb6pA5sEkGAe/view?usp=sharing",
+  "consegna": {
+    "luogo": "ex Scuola di San Lorenzo",
+    "prossima": "martedì 18 agosto, ore 17:00",
+    "nota": "In base al numero di prenotazioni può essere organizzata la distribuzione anche a Nespolo e Collalto Sabino."
+  },
+  "comuni": [
+    "Collalto Sabino",
+    "Ricetto",
+    "San Lorenzo",
+    "Nespolo",
+    "Collegiove"
+  ],
+  "altriProduttori": [
+    "Azienda Agricola Marcoraniero Melani (Collegiove) — miele biologico, patate, carne di pecora",
+    "Panificio artigianale Valturano (Paganico Sabino) — pane e dolci cotti nel forno a legna",
+    "Agri Cervia (Collegiove e Collalto Sabino) — trasformati biologici di castagne e ortaggi di stagione",
+    "Palaterra Brew Farm (Nespolo) — birra agricola artigianale"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "miele-lapino",
+  "ordine": 30,
+  "nome": "Miele L'Apino",
+  "nomeBreve": "L'Apino",
+  "categoria": "Miele millefiori",
+  "cosaVende": "Miele millefiori in lotti stagionali",
+  "paese": "San Lorenzo di Collalto Sabino",
+  "comune": "Collalto Sabino (RI)",
+  "simbolo": "🍯",
+  "sommario": "Miele millefiori delle fioriture spontanee del Monte Cervia, prodotto in piccoli lotti dagli sciami allevati sui terreni di San Lorenzo.",
+  "descrizione": [
+    "Pino fa l'apicoltore da diversi anni e conduce il proprio laboratorio di smielatura nel Comune di Sacrofano, nel Parco di Veio. La sua storia si intreccia con quella di San Lorenzo di Collalto Sabino: insieme a Gianni alleva da tempo diversi sciami sui terreni di famiglia, dove le api trovano le numerose fioriture spontanee che caratterizzano il versante del Monte Cervia.",
+    "La produzione è dedicata soprattutto al miele millefiori, un miele che racconta la stagione e il luogo in cui nasce. Le api raccolgono il nettare delle fioriture disponibili nel corso dell'anno e il risultato cambia naturalmente in base al periodo, al clima e alla vegetazione presente.",
+    "Per questo la smielatura viene fatta in momenti diversi dell'anno e suddivisa in lotti. Ogni lotto porta con sé il periodo di raccolta e, quando possibile, la fioritura prevalente e l'area in cui le api hanno bottinato: un prodotto con caratteristiche proprie, sempre legato al territorio.",
+    "Il millefiori è tra i mieli che meglio raccontano la biodiversità di un luogo: più è varia la flora intorno agli alveari, più è complesso il profilo del miele. Un vasetto non è solo miele, è un pezzo di territorio che le api hanno raccolto per noi."
+  ],
+  "listinoNota": "La disponibilità cambia a ogni lotto: il vasetto in prenotazione è indicato nel modulo d'ordine.",
+  "prodotti": [
+    {
+      "nome": "Miele millefiori San Lorenzo di Collalto Sabino (Monte Cervia)",
+      "formato": "Lotto G/26 — vasetto da 500 g",
+      "prezzo": "€ 8,00"
+    }
+  ],
+  "ordine_url": "https://docs.google.com/forms/d/e/1FAIpQLSfG5qoGl4sc34678YCbE_EitLyZ2XcatfPz1erB62FeHN-IPA/viewform",
+  "ordine_etichetta": "Prenota il miele millefiori",
+  "sitoWeb": "",
+  "risorse": []
+}
