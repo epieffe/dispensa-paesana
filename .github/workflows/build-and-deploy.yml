@@ -1,0 +1,60 @@
+name: build and deployment
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Rigenera pagine produttori, index.html e sitemap.xml
+        run: node tools/build.js
+
+      - name: Committa e pusha i file generati
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff --cached --quiet -- . ':!sitemap.xml'; then
+            git restore --staged --worktree sitemap.xml
+            echo "Nessuna modifica generata, salto il commit."
+          else
+            git commit -m "Rigenera sito"
+            git push
+          fi
+
+      - name: Configura Pages
+        uses: actions/configure-pages@v5
+
+      - name: Carica artefatto del sito
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Pubblica su GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
